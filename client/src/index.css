@@ -3818,4 +3818,115 @@ body::before {
 .dia-5 { animation: revolveDia5 80s infinite linear; }
 .dia-6 { animation: revolveDia6 72s infinite linear; }
 
+/* Custom Mobile Responsiveness Fixes */
+
+/* 1. FAQ watermark responsive scaling */
+.faq-watermark {
+  position: absolute;
+  top: -120px;
+  right: -2%;
+  font-size: 26rem;
+  font-weight: 900;
+  color: rgba(223, 183, 108, 0.18);
+  pointer-events: none;
+  user-select: none;
+  z-index: 0;
+  font-family: serif;
+  transform: rotate(12deg);
+}
+
+@media (max-width: 768px) {
+  .faq-watermark {
+    font-size: 15rem !important;
+    top: -60px !important;
+    right: -4% !important;
+    opacity: 0.11 !important;
+  }
+}
+
+/* 2. Hero Section Mobile Fit */
+@media (max-width: 950px) {
+  .landing-hero {
+    height: auto !important;
+    min-height: auto !important;
+    padding: 130px 6% 3rem 6% !important;
+  }
+  .landing-hero-graphic {
+    justify-content: center !important;
+  }
+  .landing-hero-image {
+    transform: none !important;
+    transform-origin: center center !important;
+    max-height: 50vh !important;
+  }
+}
+
+/* 3. Advantage Section Mobile Fit */
+@media (max-width: 950px) {
+  .landing-advantage-center svg {
+    display: none !important;
+  }
+  .landing-advantage-center {
+    width: auto !important;
+    height: auto !important;
+    margin: 1.5rem 0 !important;
+  }
+  .landing-advantage-logo-container img {
+    width: 180px !important;
+    height: 180px !important;
+  }
+}
+
+/* 4. Testimonials Responsive Grid */
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+@media (max-width: 950px) {
+  .testimonials-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (max-width: 650px) {
+  .testimonials-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* 5. Who Can Apply Grid Mobile padding & layout */
+@media (max-width: 600px) {
+  .landing-apply-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .landing-apply-content {
+    padding: 1.5rem !important;
+  }
+}
+
+/* 6. Hero and CTA Buttons spacing/wrapping on mobile */
+@media (max-width: 600px) {
+  .landing-hero-ctas {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 0.85rem !important;
+    padding: 0 1rem;
+  }
+  .cta-buttons-wrap {
+    display: flex;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 0.85rem !important;
+  }
+  .landing-nav-btn {
+    display: none !important;
+  }
+  .landing-navbar {
+    padding: 0 4% !important;
+  }
+}
+
+
 

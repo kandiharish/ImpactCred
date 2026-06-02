@@ -526,41 +526,6 @@ const LandingPage = () => {
                   animation: 'heroFloat 6s ease-in-out infinite' 
                 }}
               />
-              {/* Floating circular luxury badge */}
-              <div style={{
-                position: 'absolute',
-                bottom: '12%',
-                left: '2%',
-                zIndex: 15,
-                pointerEvents: 'none',
-                filter: 'drop-shadow(0 8px 24px rgba(223,183,108,0.15))'
-              }}>
-                <motion.div
-                  animate={{ rotate: 360 }}
-                  transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
-                  style={{
-                    width: '110px',
-                    height: '110px',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                  }}
-                >
-                  <svg width="110" height="110" viewBox="0 0 110 110">
-                    <defs>
-                      <path id="badgeCirclePath" d="M 55, 55 m -38, 0 a 38,38 0 1,1 76,0 a 38,38 0 1,1 -76,0" />
-                    </defs>
-                    <circle cx="55" cy="55" r="46" fill="none" stroke="rgba(223, 183, 108, 0.25)" strokeWidth="1" strokeDasharray="3 3" />
-                    <circle cx="55" cy="55" r="38" fill="rgba(223, 183, 108, 0.05)" stroke="rgba(223, 183, 108, 0.15)" strokeWidth="1" />
-                    <path d="M 55 45 L 61 48 L 61 55 C 61 60 55 64 55 64 C 55 64 49 60 49 55 L 49 48 Z" fill="var(--color-gold)" opacity="0.9" />
-                    <text fill="var(--color-gold-text)" fontSize="6.8" fontWeight="800" letterSpacing="0.8">
-                      <textPath href="#badgeCirclePath" startOffset="0%">
-                        • TRUSTED SYSTEM • INDEPENDENT Rubric • CERTIFIED IMPACT
-                      </textPath>
-                    </text>
-                  </svg>
-                </motion.div>
-              </div>
             </motion.div>
           </div>
         </section>
@@ -1605,7 +1570,7 @@ const LandingPage = () => {
             <h2 className="landing-section-title">Voices of Trust</h2>
           </div>
 
-          <div className="landing-editorial-layout" style={{ gridTemplateColumns: 'repeat(3, 1fr)', gap: '2rem' }}>
+          <div className="testimonials-grid">
             <motion.div {...fadeInUp} className="landing-card-glass" style={{ display: 'flex', flexDirection: 'column', justifyBetween: 'space-between' }}>
               <p style={{ fontStyle: 'italic', fontSize: '0.95rem', lineHeight: '1.6', marginBottom: '2rem', color: 'var(--color-text-muted-dark)' }}>
                 "Impact Cred certification has strengthened our credibility and opened doors to new partnerships."
@@ -1647,19 +1612,7 @@ const LandingPage = () => {
           
           <div style={{ position: 'relative' }}>
             {/* Background Decorative "?" Watermark */}
-            <div style={{ 
-              position: 'absolute', 
-              top: '-120px', 
-              right: '-2%', 
-              fontSize: '26rem', 
-              fontWeight: '900', 
-              color: 'rgba(223, 183, 108, 0.18)',
-              pointerEvents: 'none', 
-              userSelect: 'none', 
-              zIndex: 0,
-              fontFamily: 'serif',
-              transform: 'rotate(12deg)'
-            }}>?</div>
+            <div className="faq-watermark">?</div>
             <FaqAccordion />
           </div>
         </section>
@@ -1673,7 +1626,7 @@ const LandingPage = () => {
               <p className="landing-cta-subtitle">
                 Validate your credibility score, dispatch automated stakeholder feedback surveys, and download tamper-proof smart certifications.
               </p>
-              <div style={{ display: 'flex', gap: '1.25rem' }}>
+              <div className="cta-buttons-wrap">
                 <Link to="/register" className="landing-btn landing-btn-primary">Apply for Certification <ArrowRight size={16} /></Link>
                 <a href="mailto:impactcredorg@gmail.com" className="landing-btn landing-btn-secondary" style={{ color: '#ffffff', borderColor: 'rgba(255, 255, 255, 0.25)' }}>Talk to Our Team</a>
               </div>
