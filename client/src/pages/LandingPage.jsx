@@ -275,37 +275,37 @@ const LandingPage = () => {
       title: 'NGOs & Nonprofits',
       desc: 'Education, health, rural, child welfare, and local support teams.',
       icon: '🤝',
-      img: 'https://images.unsplash.com/photo-1509099836639-18ba1795216d?auto=format&fit=crop&w=400&q=80'
+      img: '/ngos.jpg'
     },
     {
       title: 'CSR & Corporates',
       desc: 'Businesses executing sustainable social initiatives.',
       icon: '🏢',
-      img: 'https://images.unsplash.com/photo-1431540015161-0bf868a2d407?auto=format&fit=crop&w=400&q=80'
+      img: '/csr.webp'
     },
     {
       title: 'Social Enterprises',
       desc: 'Ventures solving complex community and environmental challenges.',
       icon: '💡',
-      img: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=400&q=80'
+      img: '/social%20enterprice.webp'
     },
     {
       title: 'Foundations & Trusts',
       desc: 'Philanthropic groups allocating capital for public development.',
       icon: '💎',
-      img: '/foundations_trusts.png'
+      img: '/trust.png'
     },
     {
       title: 'Educational Institutions',
       desc: 'Schools and platforms training future changemakers.',
       icon: '🏫',
-      img: '/educational_institutions.png'
+      img: '/educations.png'
     },
     {
       title: 'Healthcare Organizations',
       desc: 'Medical clinics, wellness units, and public health setups.',
       icon: '🌱',
-      img: 'https://images.unsplash.com/photo-1584515979956-d9f6e5d09982?auto=format&fit=crop&w=400&q=80'
+      img: '/hospital.webp'
     }
   ];
 
@@ -357,7 +357,7 @@ const LandingPage = () => {
           <button onClick={() => scrollToSection('framework')} className={`landing-nav-link ${activeSection === 'framework' ? 'active' : ''}`}>Framework</button>
           <button onClick={() => scrollToSection('process')} className={`landing-nav-link ${activeSection === 'process' ? 'active' : ''}`}>Process</button>
           <button onClick={() => scrollToSection('who-can-apply')} className={`landing-nav-link ${activeSection === 'who-can-apply' ? 'active' : ''}`}>Eligibility</button>
-          <button onClick={() => scrollToSection('statistics')} className={`landing-nav-link ${activeSection === 'statistics' ? 'active' : ''}`}>Resources</button>
+          {/* <button onClick={() => scrollToSection('statistics')} className={`landing-nav-link ${activeSection === 'statistics' ? 'active' : ''}`}>Resources</button> */}
           <button onClick={() => scrollToSection('faqs')} className={`landing-nav-link ${activeSection === 'faqs' ? 'active' : ''}`}>FAQs</button>
           <button onClick={() => scrollToSection('footer')} className={`landing-nav-link`}>Contact</button>
         </nav>
@@ -368,7 +368,6 @@ const LandingPage = () => {
             </Link>
           ) : (
             <>
-              <Link to="/login" className="landing-nav-btn" id="nav-login-btn">Portal Login</Link>
               <Link to="/register" className="landing-nav-btn-primary" id="nav-register-btn">Apply Now <ArrowRight size={14} /></Link>
             </>
           )}
@@ -1060,13 +1059,21 @@ const LandingPage = () => {
                   </div>
                   <p className="landing-apply-desc">{sec.desc}</p>
                 </div>
-                <div className="landing-apply-image" style={{ backgroundImage: `url(${sec.img})` }}></div>
+                <div 
+                  className="landing-apply-image" 
+                  style={{ 
+                    backgroundImage: `url("${sec.img}")`,
+                    backgroundSize: sec.title === 'Social Enterprises' ? '135%' : 'cover',
+                    backgroundPosition: 'center'
+                  }}
+                ></div>
               </motion.div>
             ))}
           </motion.div>
         </section>
 
         {/* SECTION 8: IMPACT STATISTICS */}
+        {false && (
         <section id="statistics" className="landing-section" style={{ background: 'var(--color-bg-dark)' }}>
           <div className="landing-section-title-wrap" style={{ textAlign: 'center', marginBottom: '4rem' }}>
             <span className="landing-section-badge">IMPACT STATISTICS</span>
@@ -1246,6 +1253,7 @@ const LandingPage = () => {
             </motion.div>
           </div>
         </section>
+        )}
 
 
         {/* SECTION 9: WHY IMPACT CRED */}
@@ -1571,7 +1579,7 @@ const LandingPage = () => {
           </div>
 
           <div className="testimonials-grid">
-            <motion.div {...fadeInUp} className="landing-card-glass" style={{ display: 'flex', flexDirection: 'column', justifyBetween: 'space-between' }}>
+            <motion.div {...fadeInUp} className="landing-card-glass" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
               <p style={{ fontStyle: 'italic', fontSize: '0.95rem', lineHeight: '1.6', marginBottom: '2rem', color: 'var(--color-text-muted-dark)' }}>
                 "Impact Cred certification has strengthened our credibility and opened doors to new partnerships."
               </p>
@@ -1581,7 +1589,7 @@ const LandingPage = () => {
               </div>
             </motion.div>
 
-            <motion.div {...fadeInUp} className="landing-card-glass" style={{ display: 'flex', flexDirection: 'column', justifyBetween: 'space-between' }}>
+            <motion.div {...fadeInUp} className="landing-card-glass" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
               <p style={{ fontStyle: 'italic', fontSize: '0.95rem', lineHeight: '1.6', marginBottom: '2rem', color: 'var(--color-text-muted-dark)' }}>
                 "The evaluation process is rigorous, fair and truly reflects our impact on communities."
               </p>
@@ -1591,13 +1599,43 @@ const LandingPage = () => {
               </div>
             </motion.div>
 
-            <motion.div {...fadeInUp} className="landing-card-glass" style={{ display: 'flex', flexDirection: 'column', justifyBetween: 'space-between' }}>
+            <motion.div {...fadeInUp} className="landing-card-glass" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
               <p style={{ fontStyle: 'italic', fontSize: '0.95rem', lineHeight: '1.6', marginBottom: '2rem', color: 'var(--color-text-muted-dark)' }}>
                 "A globally benchmarked certification that every impact-driven organization should aim for."
               </p>
               <div>
                 <h4 style={{ margin: '0 0 0.25rem 0', fontSize: '1rem', fontWeight: 800 }}>Dr. Meera Nair</h4>
                 <span style={{ fontSize: '0.8rem', color: 'var(--color-gold-text)', fontWeight: '700' }}>Founder, Healthbridge Trust</span>
+              </div>
+            </motion.div>
+
+            <motion.div {...fadeInUp} className="landing-card-glass" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+              <p style={{ fontStyle: 'italic', fontSize: '0.95rem', lineHeight: '1.6', marginBottom: '2rem', color: 'var(--color-text-muted-dark)' }}>
+                "The stakeholder feedback analysis helped us refine our community engagement model and secure CSR funding."
+              </p>
+              <div>
+                <h4 style={{ margin: '0 0 0.25rem 0', fontSize: '1rem', fontWeight: 800 }}>Rajesh Iyer</h4>
+                <span style={{ fontSize: '0.8rem', color: 'var(--color-gold-text)', fontWeight: '700' }}>Managing Director, Kaveri Water Project</span>
+              </div>
+            </motion.div>
+
+            <motion.div {...fadeInUp} className="landing-card-glass" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+              <p style={{ fontStyle: 'italic', fontSize: '0.95rem', lineHeight: '1.6', marginBottom: '2rem', color: 'var(--color-text-muted-dark)' }}>
+                "Impact Cred's verification rubric is extremely comprehensive. It has made our CSR audits transparent and efficient."
+              </p>
+              <div>
+                <h4 style={{ margin: '0 0 0.25rem 0', fontSize: '1rem', fontWeight: 800 }}>Priya Patel</h4>
+                <span style={{ fontSize: '0.8rem', color: 'var(--color-gold-text)', fontWeight: '700' }}>Head of CSR, Zenith Technologies</span>
+              </div>
+            </motion.div>
+
+            <motion.div {...fadeInUp} className="landing-card-glass" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+              <p style={{ fontStyle: 'italic', fontSize: '0.95rem', lineHeight: '1.6', marginBottom: '2rem', color: 'var(--color-text-muted-dark)' }}>
+                "Earning the credibility seal has significantly boosted donor confidence and helped us scale our learning centers."
+              </p>
+              <div>
+                <h4 style={{ margin: '0 0 0.25rem 0', fontSize: '1rem', fontWeight: 800 }}>Vikram Malhotra</h4>
+                <span style={{ fontSize: '0.8rem', color: 'var(--color-gold-text)', fontWeight: '700' }}>Executive Director, Shanti Education Trust</span>
               </div>
             </motion.div>
           </div>
@@ -1628,7 +1666,7 @@ const LandingPage = () => {
               </p>
               <div className="cta-buttons-wrap">
                 <Link to="/register" className="landing-btn landing-btn-primary">Apply for Certification <ArrowRight size={16} /></Link>
-                <a href="mailto:impactcredorg@gmail.com" className="landing-btn landing-btn-secondary" style={{ color: '#ffffff', borderColor: 'rgba(255, 255, 255, 0.25)' }}>Talk to Our Team</a>
+                <a href="mailto:impactcred.connect@gmail.com" className="landing-btn landing-btn-secondary" style={{ color: '#ffffff', borderColor: 'rgba(255, 255, 255, 0.25)' }}>Talk to Our Team</a>
               </div>
             </div>
 
@@ -1658,7 +1696,7 @@ const LandingPage = () => {
                 <strong>Phone:</strong> <a href="tel:999999999" style={{ color: 'inherit', textDecoration: 'none' }}>999999999</a>
               </div>
               <div>
-                <strong>Email:</strong> <a href="mailto:impactcredorg@gmail.com" style={{ color: 'inherit', textDecoration: 'none' }}>impactcredorg@gmail.com</a>
+                <strong>Email:</strong> <a href="mailto:impactcred.connect@gmail.com" style={{ color: 'inherit', textDecoration: 'none' }}>impactcred.connect@gmail.com</a>
               </div>
               <div>
                 <strong>Address:</strong> Hyderabad, India
