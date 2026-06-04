@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import {
   ArrowRight,
@@ -101,6 +101,19 @@ const LandingPage = () => {
   const { user } = useSelector((state) => state.auth);
   const [activeSection, setActiveSection] = useState('hero');
   const [scrolled, setScrolled] = useState(false);
+
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (location.state && location.state.scrollTo) {
+      const sectionId = location.state.scrollTo;
+      navigate('/', { replace: true, state: {} });
+      setTimeout(() => {
+        scrollToSection(sectionId);
+      }, 100);
+    }
+  }, [location, navigate]);
 
   const whyPoints = [
     {
@@ -360,6 +373,7 @@ const LandingPage = () => {
           {/* <button onClick={() => scrollToSection('statistics')} className={`landing-nav-link ${activeSection === 'statistics' ? 'active' : ''}`}>Resources</button> */}
           <button onClick={() => scrollToSection('faqs')} className={`landing-nav-link ${activeSection === 'faqs' ? 'active' : ''}`}>FAQs</button>
           <button onClick={() => scrollToSection('footer')} className={`landing-nav-link`}>Contact</button>
+          <Link to="/team" className="landing-nav-link">Team</Link>
         </nav>
         <div style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>
           {user ? (
@@ -529,13 +543,7 @@ const LandingPage = () => {
           </div>
         </section>
 
-        {/* SECTION 2: TRUSTED BY ORGANIZATIONS */}
-        <section className="landing-logos-section">
-          <div className="landing-logos-container">
-            <span className="landing-section-badge">Trusted by changemakers around the world</span>
-            <BrandTicker />
-          </div>
-        </section>
+        {/* SECTION 2: TRUSTED BY ORGANIZATIONS REMOVED */}
 
 
         {/* SECTION 3: ABOUT IMPACT CRED */}
@@ -1711,6 +1719,7 @@ const LandingPage = () => {
               <button onClick={() => scrollToSection('about')} className="landing-footer-link">About Us</button>
               <button onClick={() => scrollToSection('framework')} className="landing-footer-link">Framework</button>
               <button onClick={() => scrollToSection('process')} className="landing-footer-link">Process</button>
+              <Link to="/team" className="landing-footer-link">Team</Link>
             </div>
           </div>
 

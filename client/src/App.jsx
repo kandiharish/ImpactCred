@@ -5,6 +5,7 @@ import Login from './pages/Login';
 import Register from './pages/Register';
 import Dashboard from './pages/Dashboard';
 import LandingPage from './pages/LandingPage';
+import Team from './pages/Team';
 import ProtectedRoute from './components/ProtectedRoute';
 
 function App() {
@@ -104,6 +105,7 @@ function App() {
                 <Route path="/" element={<LandingPage />} />
                 <Route path="/login" element={<Login />} />
                 <Route path="/register" element={<Register />} />
+                <Route path="/team" element={<Team />} />
                 <Route
                   path="/dashboard"
                   element={
