@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 
-const CertificateMockup = () => {
+const CertificateMockup = ({ orgName = "EcoSphere Alliance", showSliders = true }) => {
   // Local state for interactive sliders that update the certificate in real-time
   const [scores, setScores] = useState({
     transparency: 98,
@@ -49,7 +49,7 @@ const CertificateMockup = () => {
             <div style={{ fontSize: '0.75rem', color: '#a5b4fc', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '1.5px', marginBottom: '0.5rem' }}>
               Certificate of Social Impact
             </div>
-            <h4>EcoSphere Alliance</h4>
+            <h4>{orgName}</h4>
             <p>
               Successfully verified and certified for demonstrating outstanding standards of social responsibility, beneficiary transparency, and ethical collaboration.
             </p>
@@ -158,81 +158,83 @@ const CertificateMockup = () => {
       </div>
 
       {/* Interactive Controls sidebar */}
-      <div>
-        <div style={{ position: 'relative', zIndex: 20 }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '1rem' }}>
-            <span style={{ fontSize: '1.5rem' }}>🎛️</span>
-            <h3 style={{ margin: 0, fontFamily: 'Space Grotesk, sans-serif', fontSize: '1.5rem' }}>
-              Live Credibility Sandbox
-            </h3>
-          </div>
-          <p style={{ color: 'var(--color-text-muted)', fontSize: '0.95rem', lineHeight: '1.6', marginBottom: '2rem' }}>
-            Impact Cred generates tamper-proof certificates by collecting raw verification data. Test the interactive sandbox sliders to see how the cryptographic score indicators dynamically compute rating standards.
-          </p>
-
-          <div className="cert-sandbox-interactive">
-            <div className="cert-sandbox-slider-group">
-              <label>
-                <span>Transparency & Openness</span>
-                <strong>{scores.transparency}%</strong>
-              </label>
-              <input
-                type="range"
-                className="cert-sandbox-slider"
-                min="50"
-                max="100"
-                value={scores.transparency}
-                onChange={(e) => handleScoreChange('transparency', e.target.value)}
-              />
+      {showSliders && (
+        <div>
+          <div style={{ position: 'relative', zIndex: 20 }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '1rem' }}>
+              <span style={{ fontSize: '1.5rem' }}>🎛️</span>
+              <h3 style={{ margin: 0, fontFamily: 'Space Grotesk, sans-serif', fontSize: '1.5rem' }}>
+                Live Credibility Sandbox
+              </h3>
             </div>
+            <p style={{ color: 'var(--color-text-muted)', fontSize: '0.95rem', lineHeight: '1.6', marginBottom: '2rem' }}>
+              Impact Cred generates tamper-proof certificates by collecting raw verification data. Test the interactive sandbox sliders to see how the cryptographic score indicators dynamically compute rating standards.
+            </p>
 
-            <div className="cert-sandbox-slider-group">
-              <label>
-                <span>Ethical Standard Practices</span>
-                <strong>{scores.ethics}%</strong>
-              </label>
-              <input
-                type="range"
-                className="cert-sandbox-slider"
-                min="50"
-                max="100"
-                value={scores.ethics}
-                onChange={(e) => handleScoreChange('ethics', e.target.value)}
-              />
-            </div>
+            <div className="cert-sandbox-interactive">
+              <div className="cert-sandbox-slider-group">
+                <label>
+                  <span>Transparency & Openness</span>
+                  <strong>{scores.transparency}%</strong>
+                </label>
+                <input
+                  type="range"
+                  className="cert-sandbox-slider"
+                  min="50"
+                  max="100"
+                  value={scores.transparency}
+                  onChange={(e) => handleScoreChange('transparency', e.target.value)}
+                />
+              </div>
 
-            <div className="cert-sandbox-slider-group">
-              <label>
-                <span>Partnership Integrity</span>
-                <strong>{scores.collaboration}%</strong>
-              </label>
-              <input
-                type="range"
-                className="cert-sandbox-slider"
-                min="50"
-                max="100"
-                value={scores.collaboration}
-                onChange={(e) => handleScoreChange('collaboration', e.target.value)}
-              />
-            </div>
+              <div className="cert-sandbox-slider-group">
+                <label>
+                  <span>Ethical Standard Practices</span>
+                  <strong>{scores.ethics}%</strong>
+                </label>
+                <input
+                  type="range"
+                  className="cert-sandbox-slider"
+                  min="50"
+                  max="100"
+                  value={scores.ethics}
+                  onChange={(e) => handleScoreChange('ethics', e.target.value)}
+                />
+              </div>
 
-            <div className="cert-sandbox-slider-group">
-              <label>
-                <span>Social Impact Metrics</span>
-                <strong>{scores.impact}%</strong>
-              </label>
-              <input
-                type="range"
-                className="cert-sandbox-slider"
-                min="50"
-                max="100"
-                value={scores.impact}
-                onChange={(e) => handleScoreChange('impact', e.target.value)}
-              />
+              <div className="cert-sandbox-slider-group">
+                <label>
+                  <span>Partnership Integrity</span>
+                  <strong>{scores.collaboration}%</strong>
+                </label>
+                <input
+                  type="range"
+                  className="cert-sandbox-slider"
+                  min="50"
+                  max="100"
+                  value={scores.collaboration}
+                  onChange={(e) => handleScoreChange('collaboration', e.target.value)}
+                />
+              </div>
+
+              <div className="cert-sandbox-slider-group">
+                <label>
+                  <span>Social Impact Metrics</span>
+                  <strong>{scores.impact}%</strong>
+                </label>
+                <input
+                  type="range"
+                  className="cert-sandbox-slider"
+                  min="50"
+                  max="100"
+                  value={scores.impact}
+                  onChange={(e) => handleScoreChange('impact', e.target.value)}
+                />
+              </div>
             </div>
           </div>
         </div>
-      </div>
+      )}
     </div>
   );
 };
