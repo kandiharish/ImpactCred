@@ -157,7 +157,7 @@ const Team = () => {
             </p>
             <div style={{ fontSize: '0.85rem', lineHeight: '1.6', display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
               <div>
-                <strong>Phone:</strong> <a href="tel:999999999" style={{ color: 'inherit', textDecoration: 'none' }}>999999999</a>
+                <strong>Phone:</strong> <a href="tel:+919063641004" style={{ color: 'inherit', textDecoration: 'none' }}>+91 90636 41004</a>
               </div>
               <div>
                 <strong>Email:</strong> <a href="mailto:impactcred.connect@gmail.com" style={{ color: 'inherit', textDecoration: 'none' }}>impactcred.connect@gmail.com</a>

@@ -96,6 +96,39 @@ const AnimatedCounter = ({ target, duration = 1500, suffix = "" }) => {
   );
 };
 
+const testimonialsList = [
+  {
+    text: "Impact Cred certification has strengthened our credibility and opened doors to new partnerships.",
+    name: "Anita Sharma",
+    role: "CEO, GreenFuture Foundation"
+  },
+  {
+    text: "The evaluation process is rigorous, fair and truly reflects our impact on communities.",
+    name: "Rohit Varma",
+    role: "Director, Sewa Initiative"
+  },
+  {
+    text: "A globally benchmarked certification that every impact-driven organization should aim for.",
+    name: "Dr. Meera Nair",
+    role: "Founder, Healthbridge Trust"
+  },
+  {
+    text: "The stakeholder feedback analysis helped us refine our community engagement model and secure CSR funding.",
+    name: "Rajesh Iyer",
+    role: "Managing Director, Kaveri Water Project"
+  },
+  {
+    text: "Impact Cred's verification rubric is extremely comprehensive. It has made our CSR audits transparent and efficient.",
+    name: "Priya Patel",
+    role: "Head of CSR, Zenith Technologies"
+  },
+  {
+    text: "Earning the credibility seal has significantly boosted donor confidence and helped us scale our learning centers.",
+    name: "Vikram Malhotra",
+    role: "Executive Director, Shanti Education Trust"
+  }
+];
+
 const LandingPage = () => {
 
   const { user } = useSelector((state) => state.auth);
@@ -462,10 +495,10 @@ const LandingPage = () => {
                     <Award size={20} />
                   </div>
                   <div className="landing-hero-stat-info">
-                    <div className="landing-hero-stat-num">
-                      <AnimatedCounter target="1250" suffix="+" />
+                    <div className="landing-hero-stat-num" style={{ fontSize: '1.25rem', fontWeight: '800' }}>
+                      Smart Seals
                     </div>
-                    <div className="landing-hero-stat-label">Organizations Certified</div>
+                    <div className="landing-hero-stat-label">Cryptographic Trust</div>
                   </div>
                 </div>
 
@@ -476,10 +509,10 @@ const LandingPage = () => {
                     <Users size={20} />
                   </div>
                   <div className="landing-hero-stat-info">
-                    <div className="landing-hero-stat-num">
-                      <AnimatedCounter target="8500" suffix="+" />
+                    <div className="landing-hero-stat-num" style={{ fontSize: '1.25rem', fontWeight: '800' }}>
+                      Direct Feedback
                     </div>
-                    <div className="landing-hero-stat-label">Stakeholders Engaged</div>
+                    <div className="landing-hero-stat-label">Anonymous Surveys</div>
                   </div>
                 </div>
 
@@ -490,10 +523,10 @@ const LandingPage = () => {
                     <Shield size={20} />
                   </div>
                   <div className="landing-hero-stat-info">
-                    <div className="landing-hero-stat-num">
-                      <AnimatedCounter target="98" suffix="%" />
+                    <div className="landing-hero-stat-num" style={{ fontSize: '1.25rem', fontWeight: '800' }}>
+                      Unbiased Audits
                     </div>
-                    <div className="landing-hero-stat-label">Average Trust Score</div>
+                    <div className="landing-hero-stat-label">Independent Review</div>
                   </div>
                 </div>
               </div>
@@ -1580,72 +1613,26 @@ const LandingPage = () => {
         </section>
 
         {/* SECTION 11: TESTIMONIALS */}
-        <section id="testimonials" className="landing-section" style={{ background: '#f8fafc' }}>
+        <section id="testimonials" className="landing-section" style={{ background: '#f8fafc', overflow: 'hidden' }}>
           <div className="landing-section-title-wrap" style={{ textAlign: 'center', marginBottom: '4rem' }}>
             <span className="landing-section-badge">TESTIMONIALS</span>
             <h2 className="landing-section-title">Voices of Trust</h2>
           </div>
 
-          <div className="testimonials-grid">
-            <motion.div {...fadeInUp} className="landing-card-glass" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
-              <p style={{ fontStyle: 'italic', fontSize: '0.95rem', lineHeight: '1.6', marginBottom: '2rem', color: 'var(--color-text-muted-dark)' }}>
-                "Impact Cred certification has strengthened our credibility and opened doors to new partnerships."
-              </p>
-              <div>
-                <h4 style={{ margin: '0 0 0.25rem 0', fontSize: '1rem', fontWeight: 800 }}>Anita Sharma</h4>
-                <span style={{ fontSize: '0.8rem', color: 'var(--color-gold-text)', fontWeight: '700' }}>CEO, GreenFuture Foundation</span>
-              </div>
-            </motion.div>
-
-            <motion.div {...fadeInUp} className="landing-card-glass" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
-              <p style={{ fontStyle: 'italic', fontSize: '0.95rem', lineHeight: '1.6', marginBottom: '2rem', color: 'var(--color-text-muted-dark)' }}>
-                "The evaluation process is rigorous, fair and truly reflects our impact on communities."
-              </p>
-              <div>
-                <h4 style={{ margin: '0 0 0.25rem 0', fontSize: '1rem', fontWeight: 800 }}>Rohit Varma</h4>
-                <span style={{ fontSize: '0.8rem', color: 'var(--color-gold-text)', fontWeight: '700' }}>Director, Sewa Initiative</span>
-              </div>
-            </motion.div>
-
-            <motion.div {...fadeInUp} className="landing-card-glass" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
-              <p style={{ fontStyle: 'italic', fontSize: '0.95rem', lineHeight: '1.6', marginBottom: '2rem', color: 'var(--color-text-muted-dark)' }}>
-                "A globally benchmarked certification that every impact-driven organization should aim for."
-              </p>
-              <div>
-                <h4 style={{ margin: '0 0 0.25rem 0', fontSize: '1rem', fontWeight: 800 }}>Dr. Meera Nair</h4>
-                <span style={{ fontSize: '0.8rem', color: 'var(--color-gold-text)', fontWeight: '700' }}>Founder, Healthbridge Trust</span>
-              </div>
-            </motion.div>
-
-            <motion.div {...fadeInUp} className="landing-card-glass" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
-              <p style={{ fontStyle: 'italic', fontSize: '0.95rem', lineHeight: '1.6', marginBottom: '2rem', color: 'var(--color-text-muted-dark)' }}>
-                "The stakeholder feedback analysis helped us refine our community engagement model and secure CSR funding."
-              </p>
-              <div>
-                <h4 style={{ margin: '0 0 0.25rem 0', fontSize: '1rem', fontWeight: 800 }}>Rajesh Iyer</h4>
-                <span style={{ fontSize: '0.8rem', color: 'var(--color-gold-text)', fontWeight: '700' }}>Managing Director, Kaveri Water Project</span>
-              </div>
-            </motion.div>
-
-            <motion.div {...fadeInUp} className="landing-card-glass" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
-              <p style={{ fontStyle: 'italic', fontSize: '0.95rem', lineHeight: '1.6', marginBottom: '2rem', color: 'var(--color-text-muted-dark)' }}>
-                "Impact Cred's verification rubric is extremely comprehensive. It has made our CSR audits transparent and efficient."
-              </p>
-              <div>
-                <h4 style={{ margin: '0 0 0.25rem 0', fontSize: '1rem', fontWeight: 800 }}>Priya Patel</h4>
-                <span style={{ fontSize: '0.8rem', color: 'var(--color-gold-text)', fontWeight: '700' }}>Head of CSR, Zenith Technologies</span>
-              </div>
-            </motion.div>
-
-            <motion.div {...fadeInUp} className="landing-card-glass" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
-              <p style={{ fontStyle: 'italic', fontSize: '0.95rem', lineHeight: '1.6', marginBottom: '2rem', color: 'var(--color-text-muted-dark)' }}>
-                "Earning the credibility seal has significantly boosted donor confidence and helped us scale our learning centers."
-              </p>
-              <div>
-                <h4 style={{ margin: '0 0 0.25rem 0', fontSize: '1rem', fontWeight: 800 }}>Vikram Malhotra</h4>
-                <span style={{ fontSize: '0.8rem', color: 'var(--color-gold-text)', fontWeight: '700' }}>Executive Director, Shanti Education Trust</span>
-              </div>
-            </motion.div>
+          <div className="testimonials-marquee-container">
+            <div className="testimonials-marquee-track">
+              {[...testimonialsList, ...testimonialsList].map((item, idx) => (
+                <div key={idx} className="landing-card-glass testimonial-card testimonial-card-shine">
+                  <p className="testimonial-text">
+                    "{item.text}"
+                  </p>
+                  <div>
+                    <h4 className="testimonial-name">{item.name}</h4>
+                    <span className="testimonial-role">{item.role}</span>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </section>
 
@@ -1701,7 +1688,7 @@ const LandingPage = () => {
             </p>
             <div style={{ fontSize: '0.85rem', lineHeight: '1.6', display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
               <div>
-                <strong>Phone:</strong> <a href="tel:999999999" style={{ color: 'inherit', textDecoration: 'none' }}>999999999</a>
+                <strong>Phone:</strong> <a href="tel:+919063641004" style={{ color: 'inherit', textDecoration: 'none' }}>+91 90636 41004</a>
               </div>
               <div>
                 <strong>Email:</strong> <a href="mailto:impactcred.connect@gmail.com" style={{ color: 'inherit', textDecoration: 'none' }}>impactcred.connect@gmail.com</a>
