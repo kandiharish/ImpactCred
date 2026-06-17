@@ -542,22 +542,15 @@ const Dashboard = () => {
           <div className="panel-title" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
             <span>Active Applications</span>
             {org && (
-              <button 
+              <a 
+                href="https://docs.google.com/forms/d/e/1FAIpQLScmEsmx0pcwmBGqsbJZyKVW_KciQWZQMwYe5KuziYmDfGi7Mg/viewform"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="btn-primary" 
-                style={{ width: 'auto', margin: 0, padding: '0.5rem 1.25rem', fontSize: '0.9rem' }}
-                onClick={() => {
-                  const newApp = {
-                    id: `APP-2026-${Math.floor(100 + Math.random() * 900)}`,
-                    date: new Date().toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }),
-                    type: 'Rubric V2 Certification',
-                    status: 'In Progress',
-                    score: '--'
-                  };
-                  setApplications([newApp, ...applications]);
-                }}
+                style={{ width: 'auto', margin: 0, padding: '0.5rem 1.25rem', fontSize: '0.9rem', textDecoration: 'none', display: 'inline-block', textAlign: 'center' }}
               >
                 Apply for Certification
-              </button>
+              </a>
             )}
           </div>
 

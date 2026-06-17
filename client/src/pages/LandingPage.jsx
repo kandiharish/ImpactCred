@@ -415,7 +415,7 @@ const LandingPage = () => {
             </Link>
           ) : (
             <>
-              <Link to="/register" className="landing-nav-btn-primary" id="nav-register-btn">Apply Now <ArrowRight size={14} /></Link>
+              <a href="https://docs.google.com/forms/d/e/1FAIpQLScmEsmx0pcwmBGqsbJZyKVW_KciQWZQMwYe5KuziYmDfGi7Mg/viewform" target="_blank" rel="noopener noreferrer" className="landing-nav-btn-primary" id="nav-register-btn">Apply Now <ArrowRight size={14} /></a>
             </>
           )}
         </div>
@@ -478,9 +478,9 @@ const LandingPage = () => {
                   </Link>
                 ) : (
                   <>
-                    <Link to="/register" className="landing-btn landing-btn-primary" id="hero-register-cta">
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLScmEsmx0pcwmBGqsbJZyKVW_KciQWZQMwYe5KuziYmDfGi7Mg/viewform" target="_blank" rel="noopener noreferrer" className="landing-btn landing-btn-primary" id="hero-register-cta">
                       Apply for Certification <ArrowRight size={16} />
-                    </Link>
+                    </a>
                     <button onClick={() => scrollToSection('framework')} className="landing-btn landing-btn-secondary" id="hero-framework-cta">
                       Explore Framework
                     </button>
@@ -1660,7 +1660,7 @@ const LandingPage = () => {
                 Validate your credibility score, dispatch automated stakeholder feedback surveys, and download tamper-proof smart certifications.
               </p>
               <div className="cta-buttons-wrap">
-                <Link to="/register" className="landing-btn landing-btn-primary">Apply for Certification <ArrowRight size={16} /></Link>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLScmEsmx0pcwmBGqsbJZyKVW_KciQWZQMwYe5KuziYmDfGi7Mg/viewform" target="_blank" rel="noopener noreferrer" className="landing-btn landing-btn-primary">Apply for Certification <ArrowRight size={16} /></a>
                 <a href="mailto:impactcred.connect@gmail.com" className="landing-btn landing-btn-secondary" style={{ color: '#ffffff', borderColor: 'rgba(255, 255, 255, 0.25)' }}>Talk to Our Team</a>
               </div>
             </div>
@@ -1713,7 +1713,7 @@ const LandingPage = () => {
           <div className="landing-footer-col">
             <h4>Certifications</h4>
             <div className="landing-footer-links">
-              <Link to="/register" className="landing-footer-link">Apply Now</Link>
+              <a href="https://docs.google.com/forms/d/e/1FAIpQLScmEsmx0pcwmBGqsbJZyKVW_KciQWZQMwYe5KuziYmDfGi7Mg/viewform" target="_blank" rel="noopener noreferrer" className="landing-footer-link">Apply Now</a>
               <button onClick={() => scrollToSection('benefits')} className="landing-footer-link">Benefits</button>
               <button onClick={() => scrollToSection('framework')} className="landing-footer-link">Evaluation Criteria</button>
             </div>

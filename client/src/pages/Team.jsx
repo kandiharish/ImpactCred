@@ -69,7 +69,7 @@ const Team = () => {
             </Link>
           ) : (
             <>
-              <Link to="/register" className="landing-nav-btn-primary" id="nav-register-btn">Apply Now <ArrowRight size={14} /></Link>
+              <a href="https://docs.google.com/forms/d/e/1FAIpQLScmEsmx0pcwmBGqsbJZyKVW_KciQWZQMwYe5KuziYmDfGi7Mg/viewform" target="_blank" rel="noopener noreferrer" className="landing-nav-btn-primary" id="nav-register-btn">Apply Now <ArrowRight size={14} /></a>
             </>
           )}
         </div>
@@ -182,7 +182,7 @@ const Team = () => {
           <div className="landing-footer-col">
             <h4>Certifications</h4>
             <div className="landing-footer-links">
-              <Link to="/register" className="landing-footer-link">Apply Now</Link>
+              <a href="https://docs.google.com/forms/d/e/1FAIpQLScmEsmx0pcwmBGqsbJZyKVW_KciQWZQMwYe5KuziYmDfGi7Mg/viewform" target="_blank" rel="noopener noreferrer" className="landing-footer-link">Apply Now</a>
               <Link to="/" state={{ scrollTo: 'benefits' }} className="landing-footer-link">Benefits</Link>
               <Link to="/" state={{ scrollTo: 'framework' }} className="landing-footer-link">Evaluation Criteria</Link>
             </div>
